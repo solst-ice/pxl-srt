@@ -1,8 +1,17 @@
-# React + Vite
+# PXL-SRT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web app that sorts pixels by color in any image. Upload an image to see its pixels reorganized into a smooth color gradient.
 
-Currently, two official plugins are available:
+## Features
+- Drag and drop image upload
+- Supports JPG and PNG formats
+- Shows original and sorted images side by side
+- Multiple image processing in one session
+- Color sorting with luminosity grouping
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Try It
+1. Drag an image into the upload box
+2. Watch as your image is transformed into color-sorted pixels
+3. Keep adding more images to compare different sorting results
+
+Built with React + Vite
