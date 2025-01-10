@@ -10,6 +10,12 @@
   justify-content: center;
   transition: all 0.3s ease;
   background-color: white;
+  cursor: pointer;
+}
+
+.drag-drop-box:hover {
+  border-color: #2196f3;
+  background-color: rgba(33, 150, 243, 0.05);
 }
 
 .drag-drop-box.dragging {
@@ -30,4 +36,5 @@
 .subtitle {
   color: #666;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
 } 

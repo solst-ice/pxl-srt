@@ -5,8 +5,7 @@ import { sortPixelsByColor } from './utils/imageProcessing';
 import './App.css';
 
 function App() {
-  const [originalImage, setOriginalImage] = useState(null);
-  const [sortedImage, setSortedImage] = useState(null);
+  const [images, setImages] = useState([]);
 
   const handleImageDrop = async (file) => {
     if (file && (file.type === 'image/jpeg' || file.type === 'image/png')) {
@@ -15,9 +14,12 @@ function App() {
         const img = new Image();
         img.src = e.target.result;
         img.onload = async () => {
-          setOriginalImage(e.target.result);
           const sorted = await sortPixelsByColor(img);
-          setSortedImage(sorted);
+          setImages(prevImages => [...prevImages, {
+            id: Date.now(),
+            original: e.target.result,
+            sorted: sorted
+          }]);
         };
       };
       reader.readAsDataURL(file);
@@ -27,14 +29,18 @@ function App() {
   return (
     <div className="App">
       <h1>PXL-SRT</h1>
-      {!originalImage ? (
+      <div className="images-container">
+        {images.map(image => (
+          <ImageComparison 
+            key={image.id}
+            originalImage={image.original} 
+            sortedImage={image.sorted}
+          />
+        ))}
+      </div>
+      <div className="drop-box-container">
         <DragDropBox onImageDrop={handleImageDrop} />
-      ) : (
-        <ImageComparison 
-          originalImage={originalImage} 
-          sortedImage={sortedImage} 
-        />
-      )}
+      </div>
     </div>
   );
 }
