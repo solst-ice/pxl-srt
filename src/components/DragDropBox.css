@@ -1,0 +1,33 @@
+.drag-drop-box {
+  width: 80%;
+  max-width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  border: 3px dashed #ccc;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.drag-drop-box.dragging {
+  border-color: #2196f3;
+  background-color: rgba(33, 150, 243, 0.1);
+  transform: scale(1.02);
+}
+
+.drag-drop-content {
+  text-align: center;
+}
+
+.upload-icon {
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.9rem;
+} 
